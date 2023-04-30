@@ -1,0 +1,7 @@
+body {
+    background: url('https://picsum.photos/id/292/1920/1080');
+}
+
+::placeholder {
+    color: white !important;
+}

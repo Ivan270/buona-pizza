@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- BOOTSTRAP 5.3 CDN -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+			crossorigin="anonymous"
+		></script>
+		<!-- JS y CSS propios -->
+		<link rel="stylesheet" href="./assets/css/styles.css" />
+		<script defer src="./assets/js/index.js"></script>
+		<title>Buona Pizza</title>
+	</head>
+	<body class="min-vh-100 d-flex flex-column justify-content-center">
+		<main
+			class="bg-dark bg-opacity-50 text-light rounded-4 p-2 container mx-auto row row-cols-2 g-2"
+		>
+			<!-- SECCION ARMADO PIZZA START -->
+			<section class="mt-5">
+				<h2 class="text-bg-secondary display-6 rounded-pill px-4">
+					MEJORA TU PIZZA
+				</h2>
+				<div class="mb-3 container">
+					<p>
+						Puede elegir 3 ingredientes gratis. Cada ingrediente adicional
+						cuesta $800 cada uno.
+					</p>
+				</div>
+				<form class="container" id="formIngredientes">
+					<p>Ingredientes disponibles para agregar a su pizza:</p>
+					<div class="form-check">
+						<input
+							class="form-check-input check"
+							type="checkbox"
+							value="Carne"
+							id="inputCarne"
+						/>
+						<label class="form-check-label" for="inputCarne"> Carne </label>
+					</div>
+					<div class="form-check">
+						<input
+							class="form-check-input check"
+							type="checkbox"
+							value="Pollo"
+							id="inputPollo"
+						/>
+						<label class="form-check-label" for="inputPollo"> Pollo </label>
+					</div>
+					<div class="form-check">
+						<input
+							class="form-check-input check"
+							type="checkbox"
+							value="Tocino"
+							id="inputTocino"
+						/>
+						<label class="form-check-label" for="inputTocino"> Tocino </label>
+					</div>
+					<div class="form-check">
+						<input
+							class="form-check-input check"
+							type="checkbox"
+							value="Mozzarella"
+							id="inputMozzarella"
+						/>
+						<label class="form-check-label" for="inputMozzarella">
+							Mozzarella
+						</label>
+					</div>
+					<div class="form-check">
+						<input
+							class="form-check-input check"
+							type="checkbox"
+							value="Champinon"
+							id="inputChampinon"
+						/>
+						<label class="form-check-label" for="inputChampinon">
+							Champiñón
+						</label>
+					</div>
+					<div class="form-check">
+						<input
+							class="form-check-input check"
+							type="checkbox"
+							value="Cebolla"
+							id="inputCebolla"
+						/>
+						<label class="form-check-label" for="inputCebolla"> Cebolla </label>
+					</div>
+					<div class="form-check">
+						<input
+							class="form-check-input check"
+							type="checkbox"
+							value="Pina"
+							id="inputPina"
+						/>
+						<label class="form-check-label" for="inputPina"> Piña </label>
+					</div>
+					<div class="form-check">
+						<input
+							class="form-check-input check"
+							type="checkbox"
+							value="Pimenton"
+							id="inputPimenton"
+						/>
+						<label class="form-check-label" for="inputPimenton">
+							Pimentón
+						</label>
+					</div>
+				</form>
+				<div class="container">
+					<p>Los ingredientes seleccionados son:</p>
+					<p id="displayIngredientes"></p>
+					<p>
+						Los ingredientes <span class="fw-bold">extras</span> seleccionados
+						son:
+					</p>
+					<p id="displayExtras"></p>
+				</div>
+			</section>
+			<!-- SECCION ARMADO PIZZA END -->
+			<!-- SECCION RESUMEN PEDIDO START -->
+			<section class="mt-5">
+				<div class="mb-3">
+					<h2 class="text-bg-secondary display-6 rounded-pill px-4">
+						RESUMEN DEL PEDIDO
+					</h2>
+				</div>
+				<div class="mt-4 container">
+					<table class="table">
+						<tbody>
+							<tr>
+								<td class="text-light fw-bold">Pizza XL</td>
+								<td class="fw-bold text-light text-end">$15.000</td>
+							</tr>
+							<tr>
+								<td class="text-light fw-bold">Ingredientes Extras</td>
+								<td
+									class="fw-bold text-light text-end"
+									id="displayPrecioExtras"
+								></td>
+							</tr>
+							<tr>
+								<td class="text-light fw-bold">Propina</td>
+								<td
+									class="fw-bold text-light text-end"
+									id="displayPropina"
+								></td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="container">
+						<form id="formPedido">
+							<div
+								class="row row-cols-2 border border-2 border-secondary-subtle rounded-pill g-1 p-2"
+							>
+								<input
+									type="number"
+									class="text-light bg-transparent form-control border-0 m-0 rounded-pill w-50"
+									name="propinaInput"
+									id="propinaInput"
+									placeholder="Ingresa Propina"
+								/>
+
+								<button
+									class="btn btn-dark btn-sm rounded-pill w-50 m-0"
+									type="submit"
+								>
+									Enviar Pedido con Propina
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+			<!-- SECCION RESUMEN PEDIDO END -->
+		</main>
+	</body>
+</html>
